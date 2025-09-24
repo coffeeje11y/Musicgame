@@ -35,3 +35,6 @@ obj/
 # Crashlytics
 crashlytics-build.properties
 fabric.properties
+
+# フォントの SDF アセットだけ除外
+Assets/Fonts/*SDF.asset

@@ -153,8 +153,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 275}
-  m_SizeDelta: {x: 400, y: 300}
+  m_AnchoredPosition: {x: 0, y: 175}
+  m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &40380318
 MonoBehaviour:
@@ -257,7 +257,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 3940432c09957604e996ad24c5de49b6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 196779391}
   m_Layer: 0
   m_Name: collisionbox3
-  m_TagString: Untagged
+  m_TagString: Lane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -502,7 +502,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: ef042913b97a62b4d873a2b0f8794d80, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -559,11 +559,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b69f02d8d4e6a1b43bc6249069e93a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laneIndex: 0
   inputKey: 51
+  judgeRangeZ: 1
   judgeTextController: {fileID: 1982464937}
+  gameManager: {fileID: 1134789219}
   scoreCountText: {fileID: 2105249977}
   comboCountText: {fileID: 179932633}
-  judgeRangeZ: 1
 --- !u!1 &214404578
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,7 +764,7 @@ GameObject:
   - component: {fileID: 359906621}
   m_Layer: 0
   m_Name: collisionbox1
-  m_TagString: Untagged
+  m_TagString: Lane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -811,7 +813,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: ef042913b97a62b4d873a2b0f8794d80, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -868,11 +870,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b69f02d8d4e6a1b43bc6249069e93a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laneIndex: 0
   inputKey: 49
+  judgeRangeZ: 1
   judgeTextController: {fileID: 1982464937}
+  gameManager: {fileID: 1134789219}
   scoreCountText: {fileID: 2105249977}
   comboCountText: {fileID: 179932633}
-  judgeRangeZ: 1
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,7 +1289,7 @@ GameObject:
   - component: {fileID: 858027231}
   m_Layer: 0
   m_Name: collisionbox4
-  m_TagString: Untagged
+  m_TagString: Lane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1334,7 +1338,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: ef042913b97a62b4d873a2b0f8794d80, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1391,11 +1395,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b69f02d8d4e6a1b43bc6249069e93a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laneIndex: 0
   inputKey: 52
+  judgeRangeZ: 1
   judgeTextController: {fileID: 1982464937}
+  gameManager: {fileID: 1134789219}
   scoreCountText: {fileID: 2105249977}
   comboCountText: {fileID: 179932633}
-  judgeRangeZ: 1
 --- !u!1 &902693305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1595,7 +1601,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 3940432c09957604e996ad24c5de49b6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1749,6 +1755,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1134789218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1134789220}
+  - component: {fileID: 1134789219}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1134789219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134789218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebc64e4c3e424c45b2bb31e5f01aa8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  combo: 0
+  scoreCountText: {fileID: 2105249977}
+  comboCountText: {fileID: 179932633}
+--- !u!4 &1134789220
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134789218}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.516212, y: 20.012863, z: -15.32671}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1148833265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1885,6 +1939,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148833265}
   m_CullTransparentMesh: 1
+--- !u!1 &1177145637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1177145639}
+  - component: {fileID: 1177145638}
+  m_Layer: 0
+  m_Name: MusicPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1177145638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177145637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45897298190131488f0ccceaa794fbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1177145639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177145637}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.516212, y: 20.012863, z: -15.32671}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1217764237
 GameObject:
   m_ObjectHideFlags: 0
@@ -2393,7 +2491,7 @@ GameObject:
   - component: {fileID: 1767992983}
   m_Layer: 0
   m_Name: collisionbox5
-  m_TagString: Untagged
+  m_TagString: Lane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2442,7 +2540,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: ef042913b97a62b4d873a2b0f8794d80, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2499,11 +2597,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b69f02d8d4e6a1b43bc6249069e93a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laneIndex: 0
   inputKey: 53
+  judgeRangeZ: 1
   judgeTextController: {fileID: 1982464937}
+  gameManager: {fileID: 1134789219}
   scoreCountText: {fileID: 2105249977}
   comboCountText: {fileID: 179932633}
-  judgeRangeZ: 1
+--- !u!1 &1964602097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1964602099}
+  - component: {fileID: 1964602098}
+  m_Layer: 0
+  m_Name: SensorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1964602098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964602097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 041ef682996533d40890c4929b7005d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLogging: 0
+--- !u!4 &1964602099
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964602097}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.516212, y: 20.012863, z: -15.32671}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1982464932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2640,7 +2785,7 @@ GameObject:
   - component: {fileID: 1996769465}
   m_Layer: 0
   m_Name: collisionbox2
-  m_TagString: Untagged
+  m_TagString: Lane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2689,7 +2834,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: ef042913b97a62b4d873a2b0f8794d80, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2746,11 +2891,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b69f02d8d4e6a1b43bc6249069e93a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laneIndex: 0
   inputKey: 50
+  judgeRangeZ: 1
   judgeTextController: {fileID: 1982464937}
+  gameManager: {fileID: 1134789219}
   scoreCountText: {fileID: 2105249977}
   comboCountText: {fileID: 179932633}
-  judgeRangeZ: 1
 --- !u!4 &2071361029 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3378656650834874883, guid: 1540b15fb48e7b746acfae4bcfb906a9, type: 3}
@@ -3056,6 +3203,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: musicbox5
       objectReference: {fileID: 0}
+    - target: {fileID: 4599170433741627909, guid: 75ec0cf3dcb71b047a88b31d8d558070, type: 3}
+      propertyPath: m_TagString
+      value: Note
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3072,6 +3223,10 @@ PrefabInstance:
     - target: {fileID: 4478823008247829233, guid: 496b7a130ef3c234699597af718b4af3, type: 3}
       propertyPath: m_Name
       value: musicbox3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4478823008247829233, guid: 496b7a130ef3c234699597af718b4af3, type: 3}
+      propertyPath: m_TagString
+      value: Note
       objectReference: {fileID: 0}
     - target: {fileID: 7553920486615626869, guid: 496b7a130ef3c234699597af718b4af3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3134,6 +3289,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: musicbox4
       objectReference: {fileID: 0}
+    - target: {fileID: 1852173810743327099, guid: c6e38ac3eccd27a4dbc0ab977baa9fc2, type: 3}
+      propertyPath: m_TagString
+      value: Note
+      objectReference: {fileID: 0}
     - target: {fileID: 5549009952470887216, guid: c6e38ac3eccd27a4dbc0ab977baa9fc2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3
@@ -3195,6 +3354,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: musicbox2
       objectReference: {fileID: 0}
+    - target: {fileID: 1616382657001129157, guid: bcc1a0f7f8727284b9a3cf30a2cce307, type: 3}
+      propertyPath: m_TagString
+      value: Note
+      objectReference: {fileID: 0}
     - target: {fileID: 1721214484788615414, guid: bcc1a0f7f8727284b9a3cf30a2cce307, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1
@@ -3239,6 +3402,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7578811076675583998, guid: bcc1a0f7f8727284b9a3cf30a2cce307, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 96717ea29aeea53478cf4a3329aace1c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3300,6 +3467,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: musicbox1
       objectReference: {fileID: 0}
+    - target: {fileID: 8749069020710450200, guid: 1540b15fb48e7b746acfae4bcfb906a9, type: 3}
+      propertyPath: m_TagString
+      value: Note
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3334,3 +3505,6 @@ SceneRoots:
   - {fileID: 1686072936}
   - {fileID: 214404579}
   - {fileID: 1673469978}
+  - {fileID: 1134789220}
+  - {fileID: 1177145639}
+  - {fileID: 1964602099}

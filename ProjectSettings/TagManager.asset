@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Note
+  - Lane
   layers:
   - Default
   - TransparentFX

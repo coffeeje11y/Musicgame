@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.Networking;
 
 public class NoteSpawner : MonoBehaviour
 {
@@ -18,18 +19,67 @@ public class NoteSpawner : MonoBehaviour
         Debug.Log($"[NoteSpawner] notePrefab: {(notePrefab != null ? notePrefab.name : "null")}");
         Debug.Log($"[NoteSpawner] spawnPoints.Length: {spawnPoints.Length}");
 
-        LoadChart();
-        StartCoroutine(SpawnNotesCoroutine());
+        StartCoroutine(LoadChartAndStart());
     }
 
-    void LoadChart()
+    IEnumerator LoadChartAndStart()
+    {
+        yield return StartCoroutine(LoadChart());
+        if (scheduledNotes.Count > 0)
+        {
+            StartCoroutine(SpawnNotesCoroutine());
+        }
+        else
+        {
+            Debug.LogError("[NoteSpawner] ノーツデータが読み込まれませんでした！");
+        }
+    }
+
+    IEnumerator LoadChart()
     {
         string path = Path.Combine(Application.streamingAssetsPath, chartFileName);
-        string json = File.ReadAllText(path);
+        string json = "";
+
+#if UNITY_ANDROID && !UNITY_EDITOR
+        Debug.Log($"[NoteSpawner] Android で JSON 読み込み: {path}");
+        UnityWebRequest www = UnityWebRequest.Get(path);
+        yield return www.SendWebRequest();
+
+        if (www.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError($"[NoteSpawner] JSON 読み込み失敗: {www.error}");
+            yield break;
+        }
+        json = www.downloadHandler.text;
+#else
+        // PC / Editor
+        if (!File.Exists(path))
+        {
+            Debug.LogError($"[NoteSpawner] ファイルが見つかりません: {path}");
+            yield break;
+        }
+        json = File.ReadAllText(path);
+        yield return null;
+#endif
+        if (!string.IsNullOrEmpty(json) && json[0] == '\uFEFF')
+        {
+            Debug.LogWarning("[NoteSpawner] JSON 先頭にBOMがあったので削除しました");
+            json = json.Substring(1);
+        }
+        if (string.IsNullOrEmpty(json))
+        {
+            Debug.LogError("[NoteSpawner] JSON が空です");
+            yield break;
+        }
 
         Chart chart = JsonConvert.DeserializeObject<Chart>(json);
-        scheduledNotes.Clear();
+        if (chart == null || chart.notes == null)
+        {
+            Debug.LogError("[NoteSpawner] Chart データが不正です");
+            yield break;
+        }
 
+        scheduledNotes.Clear();
         foreach (var note in chart.notes)
         {
             AddNoteRecursive(note, chart);
@@ -42,8 +92,6 @@ public class NoteSpawner : MonoBehaviour
     // ネストされたノートも含めて再帰的にスケジューリング
     void AddNoteRecursive(NoteData note, Chart chart)
     {
-        Debug.Log($"[AddNote] num={note.num}, block={note.block}, lpb={note.LPB}, time={(note.num / (float)note.LPB) * (60f / chart.BPM)}");
-
         float sec = (note.num / (float)note.LPB) * (60f / chart.BPM);
         scheduledNotes.Add((sec + chart.offset, note.block - 1));
 
@@ -68,7 +116,10 @@ public class NoteSpawner : MonoBehaviour
 
             if (block >= 0 && block < spawnPoints.Length)
             {
-                Instantiate(notePrefab, spawnPoints[block].position, Quaternion.identity);
+                // ノーツ生成（親を設定して位置ずれを防ぐ）
+                GameObject note = Instantiate(notePrefab, spawnPoints[block].position, Quaternion.identity);
+                note.transform.SetParent(spawnPoints[block]);
+                Debug.Log($"[NoteSpawner] ノート生成: time={spawnTime:F2}, block={block}");
             }
             else
             {

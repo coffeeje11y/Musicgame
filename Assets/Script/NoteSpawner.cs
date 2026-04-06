@@ -9,7 +9,7 @@ public class NoteSpawner : MonoBehaviour
 {
     public GameObject notePrefab;
     public Transform[] spawnPoints;
-    public string chartFileName = "Rogue_Circuit.json";
+    public string chartFileName = "chart1.json";
 
     private List<(float time, int block)> scheduledNotes = new();
 

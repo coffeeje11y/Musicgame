@@ -53,6 +53,12 @@ public class JudgeZone : MonoBehaviour
 
         if (inputDetected)
         {
+            CubeFlash cf = GetComponent<CubeFlash>();
+            if (cf != null)
+            {
+                cf.Flash();
+            }
+
             JudgeNotes();
         }
     }

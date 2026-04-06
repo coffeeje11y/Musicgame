@@ -144,17 +144,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40380316}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1982464936}
+  m_Father: {fileID: 2077520518}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 175}
-  m_SizeDelta: {x: 400, y: 100}
+  m_AnchoredPosition: {x: -50, y: 175}
+  m_SizeDelta: {x: 280, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &40380318
 MonoBehaviour:
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.6273585, g: 1, b: 0.84026736, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -332,7 +332,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1982464936}
+  m_Father: {fileID: 2077520518}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -451,6 +451,7 @@ GameObject:
   - component: {fileID: 196779388}
   - component: {fileID: 196779387}
   - component: {fileID: 196779391}
+  - component: {fileID: 196779392}
   m_Layer: 0
   m_Name: collisionbox3
   m_TagString: Lane
@@ -566,6 +567,21 @@ MonoBehaviour:
   gameManager: {fileID: 1134789219}
   scoreCountText: {fileID: 2105249977}
   comboCountText: {fileID: 179932633}
+--- !u!114 &196779392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196779386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 112006c74aba81a43bc68d0afb4793a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 0}
+  flashColor: {r: 0, g: 1, b: 1, a: 1}
+  flashTime: 0.08
 --- !u!1 &214404578
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,7 +954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 359906618}
-  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  flashColor: {r: 0, g: 1, b: 1, a: 1}
   flashTime: 0.08
 --- !u!1 &410087039
 GameObject:
@@ -1350,6 +1366,7 @@ GameObject:
   - component: {fileID: 858027228}
   - component: {fileID: 858027227}
   - component: {fileID: 858027231}
+  - component: {fileID: 858027232}
   m_Layer: 0
   m_Name: collisionbox4
   m_TagString: Lane
@@ -1465,6 +1482,21 @@ MonoBehaviour:
   gameManager: {fileID: 1134789219}
   scoreCountText: {fileID: 2105249977}
   comboCountText: {fileID: 179932633}
+--- !u!114 &858027232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858027226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 112006c74aba81a43bc68d0afb4793a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 0}
+  flashColor: {r: 0, g: 1, b: 1, a: 1}
+  flashTime: 0.08
 --- !u!1 &902693305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,7 +1928,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1982464936}
+  m_Father: {fileID: 2077520518}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2184,12 +2216,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1651037499}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1982464936}
+  m_Father: {fileID: 2077520518}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2552,6 +2584,7 @@ GameObject:
   - component: {fileID: 1767992980}
   - component: {fileID: 1767992979}
   - component: {fileID: 1767992983}
+  - component: {fileID: 1767992984}
   m_Layer: 0
   m_Name: collisionbox5
   m_TagString: Lane
@@ -2667,6 +2700,21 @@ MonoBehaviour:
   gameManager: {fileID: 1134789219}
   scoreCountText: {fileID: 2105249977}
   comboCountText: {fileID: 179932633}
+--- !u!114 &1767992984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767992978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 112006c74aba81a43bc68d0afb4793a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 0}
+  flashColor: {r: 0, g: 1, b: 1, a: 1}
+  flashTime: 0.08
 --- !u!1 &1964602097
 GameObject:
   m_ObjectHideFlags: 0
@@ -2807,12 +2855,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 40380317}
-  - {fileID: 1148833266}
-  - {fileID: 1651037500}
-  - {fileID: 2105249976}
-  - {fileID: 179932632}
   - {fileID: 902693308}
+  - {fileID: 2077520518}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2846,6 +2890,7 @@ GameObject:
   - component: {fileID: 1996769462}
   - component: {fileID: 1996769461}
   - component: {fileID: 1996769465}
+  - component: {fileID: 1996769466}
   m_Layer: 0
   m_Name: collisionbox2
   m_TagString: Lane
@@ -2961,11 +3006,66 @@ MonoBehaviour:
   gameManager: {fileID: 1134789219}
   scoreCountText: {fileID: 2105249977}
   comboCountText: {fileID: 179932633}
+--- !u!114 &1996769466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996769460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 112006c74aba81a43bc68d0afb4793a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 0}
+  flashColor: {r: 0, g: 1, b: 1, a: 1}
+  flashTime: 0.08
 --- !u!4 &2071361029 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3378656650834874883, guid: 1540b15fb48e7b746acfae4bcfb906a9, type: 3}
   m_PrefabInstance: {fileID: 8684098576994019716}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2077520517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2077520518}
+  m_Layer: 5
+  m_Name: UIGroup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2077520518
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077520517}
+  m_LocalRotation: {x: 0.008726558, y: 0, z: 0, w: 0.999962}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1651037500}
+  - {fileID: 2105249976}
+  - {fileID: 179932632}
+  - {fileID: 1148833266}
+  - {fileID: 40380317}
+  m_Father: {fileID: 1982464936}
+  m_LocalEulerAnglesHint: {x: 1, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -250, y: 60}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2105249975
 GameObject:
   m_ObjectHideFlags: 0
@@ -2996,11 +3096,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1982464936}
+  m_Father: {fileID: 2077520518}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 30, y: 170}
+  m_AnchoredPosition: {x: 30.000008, y: 169.99997}
   m_SizeDelta: {x: 150, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2105249977
